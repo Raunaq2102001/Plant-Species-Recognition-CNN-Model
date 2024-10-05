@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Species Recognition CNN Model</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('your_background_image_url.jpg'); /* Add your background image URL here */
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            text-align: center;
+         
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 600px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .square-button {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px; /* Rounded corners */
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #28a745;
+            font-size: 16px;
+            border: none;
+            transition: background 0.3s;
+            position: relative; /* Position for pseudo-element */
+            overflow: hidden; /* To contain border-radius */
+            padding: 20px;
+            border: 2px solid white;
+        }
+
+        .square-button:hover {
+            cursor: pointer;
+            
+        }
+
+        #photo {
+            max-width: 80%;
+            margin-top: 10px;
+            
+            display: none;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FFD700; /* Gold color for result */
+        }
+
+        input[type="file"] {
+            display: none; /* Hide the default file input */
+        }
+
+        .camera-label, .upload-label {
+            background-size:80px 80px;
+            background-repeat: no-repeat; /* Cover to fit the box */
+            background-position: center; /* Center the image */
+           
+            border-radius: 15px; /* Rounded corners for labels */
+        }
+
+        .camera-label {
+            background-image: url('static/1.png'); /* Camera icon */
+
+        }
+
+        .upload-label {
+            background-image: url('static/2.png'); /* Upload icon */
+        }
+        .docker{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .image{
+            display:flex;
+            justify-content:center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Plant Species Recognition CNN Model</h1>
+        <div class='docker'>
+            <div class="prebtn">
+                <h2>Take Photo</h2>
+                <div class="button-container">
+                    <label class="square-button camera-label" for="camera-input"></label>
+                    <input type="file" id="camera-input" accept="image/*" capture="environment" />
+                </div>
+            </div>
+            <div "prebtn">
+                <h2>Upload Image</h2>
+                <div class="button-container">
+                    <label class="square-button upload-label" for="file-input"></label>
+                    <input type="file" id="file-input" accept="image/*" />
+                </div>
+            </div>
+        </div>
+        <div class="image">
+        <img id="photo" alt="Captured Image" />
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
